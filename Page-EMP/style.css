@@ -1,0 +1,942 @@
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", serif;
+    font-weight: 600;
+}
+
+body {
+    background-color: #121212;
+    height: 100vh;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.btn-contato button,.btn-tester,
+.btn-login button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #121212;
+    background-color: #1a0d72;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Unbounded", serif;
+    transition: .4s;
+}
+
+/* ESTILO DO QUEM SOMOS*/
+
+section.quem-somos, section.visao-cliente {
+    padding: 40px 4%;
+    margin-top: 30px;
+}
+
+section.quem-somos .flex {
+    align-items: center;
+    gap: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+section.visao-cliente .flex {
+    align-items: left;
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.quem-somos .txt-quem-somos {
+    color: #ffffff;
+    font-family: "Unbounded", serif;
+    flex: 1;
+    max-width: 55%;
+    text-align: left;
+}
+
+.visao-cliente .txt-visao-cliente {
+    color: #ffffff;
+    font-family: "Unbounded", serif;
+    flex: 1;
+    max-width: 55%;
+    text-align: left;
+}
+
+.quem-somos .txt-quem-somos h2, .visao-cliente .txt-visao-cliente h2 {
+    color: #ffffff;
+    font-weight: 350;
+    font-size: 40px;
+    font-family: "Unbounded", serif;
+}
+
+.quem-somos .txt-quem-somos span, .visao-cliente .txt-visao-cliente span {
+    color: #2049ff;
+    font-size: 42px;
+    font-weight: 200;
+    font-family: "Unbounded", serif;
+    display: block;
+}
+
+.quem-somos .txt-quem-somos p {
+    text-align: left;
+    font-family: "Unbounded", serif;
+    margin: 25px 0;
+}
+
+.visao-cliente .txt-visao-cliente p {
+    text-align: left;
+    font-family: "Unbounded", serif;
+    margin: 25px 0;
+}
+
+.quem-somos .txt-quem-somos p2, .visao-cliente .txt-visao-cliente p2 {
+    font-weight: 10;
+    font-size: 15px;
+    color: #96a9ff;
+    text-align: left;
+    margin: 25px 0;
+    font-family: "Unbounded", serif;
+}
+
+.visao-cliente .img-visao-cliente {
+    flex: 1;
+    max-width: 26%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.visao-cliente .img-visao-cliente img {
+    height: 300px;
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+    padding-right: 1px;
+    display: block;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 10px;
+    }
+}
+
+
+h2.titulo{
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: #1a0d72;
+}
+
+.btn-tester {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 700;
+
+    background-color: #1a0d72;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Unbounded", serif;
+    transition: .4s;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-tester:hover {
+    box-shadow: 0px 0px 20px #2049ff70;
+    transform: scale(1.05);
+}
+
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+a:hover {
+    text-decoration: none; /* Garante que o sublinhado também não apareça ao passar o mouse */
+}
+
+
+.inpt-senha input {
+    padding: 10px 40px; /* Mesma configuração de padding */
+    font-size: 18px; /* Tamanho do texto */
+    font-weight: 700; /* Peso do texto */
+    color: #fff; /* Texto branco para contraste */
+    background-color: #fff; /* Cor de fundo branca */
+    text-decoration: none;
+    border: 0; /* Remove a borda */
+    border-radius: 30px; /* Borda arredondada */
+    font-family: "Unbounded", serif; /* Mesma fonte */
+    cursor: text; /* Cursor para campo de texto */
+    transition: 0.4s; /* Animação de transição */
+}
+
+.inpt-senha input:focus {
+    text-decoration: none;
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0px 0px 20px #aaa; /* Efeito de foco */
+}
+
+.inpt-senha input:hover {
+    box-shadow: 0px 0px 20px #aaa; /* Efeito ao passar o mouse */
+    transform: scale(1.05); /* Efeito de crescimento */
+}
+
+/* Alteração para hover */
+.inpt-senha input:hover {
+    text-decoration: none;
+    background-color: #1a0d72; /* Fundo do hover similar ao botão */
+    color: #fff; /* Texto branco no hover */
+}
+
+
+.btn-social button:hover {
+    box-shadow: 0px 0px 20px #2049ff4f;
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+/* ESTILO CABECALHO */
+header {
+    padding: 40px 4%;
+}
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: rgb(78, 78, 78);
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+    background: none; /* Remove o fundo */
+}
+
+header a:hover {
+    color: lightgray;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.450);
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+header .logo img {
+    width: 100px; /* Ajuste o tamanho */
+    height: auto;
+}
+
+/* ESTILO DO TOPO DO SITE*/
+
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1 {
+    color: white;
+    font-size: 52px;
+    font-family: "Unbounded", serif;
+}
+
+.topo-do-site h1 span {
+    color: #2049ff; /* Apenas muda a cor */
+    font-size: 52px;
+    font-family: "Unbounded", serif;
+}
+
+.txt-topo-site p {
+    font-size: 24px;
+    color: lightgray;
+    margin: 30px 0;
+    font-family: "DM Sans", serif;
+}
+
+.topo-do-site .img-topo-site img{
+    width: 350px;
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/* ESTILO DOS PROJETOS*/
+
+section.projetos{
+    margin-top: 50px;
+    padding: 40px 4%;
+} 
+
+section.projetos .flex{
+    gap: 60px;
+}
+
+section.projetos .projetos-box{
+    color: rgb(255, 255, 255);
+    padding: 40px;
+    border-radius: 32px;
+    text-decoration: none;
+    border: 2px solid #1a0d72;
+    margin-top: 45px;
+    transition: 0.7s;
+}
+
+
+
+section.projetos .projetos-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #3019c454;
+    transition: 1s;
+}
+
+section.projetos .projetos-box i{
+    font-size: 50px;
+    color: #2049ff;
+}
+
+section.projetos .projetos-box h3{
+    font-size: 42;
+    margin: 15px 0;
+    color: #d5dcff;
+    font-family: "Unbounded", serif;
+}
+
+section.projetos span{
+    color: #2049ff;
+    font-weight: 200;
+    font-family: "Unbounded", serif;
+}
+
+section.projetos h2{
+    color: #ffffff;
+    font-weight: 350;
+    font-family: "Unbounded", serif;
+}
+
+/* ESTILO DOS QUEM SOMOS*/
+
+section.quem-somos {
+    padding: 40px 4%;
+    margin-top: 30px;
+}
+
+section.quem-somos  .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.quem-somos .txt-quem-somos{
+    color: #ffffff;
+    font-family: "Unbounded", serif;
+}
+
+.quem-somos  .txt-quem-somos h2{
+    color: #ffffff;
+    font-weight: 350;
+    font-size: 40px;
+    font-family: "Unbounded", serif;
+}
+
+.quem-somos  .txt-quem-somos span{
+    color: #2049ff;
+    font-size: 42;
+    font-weight: 200;
+    font-family: "Unbounded", serif;
+    display: block;
+}
+
+.quem-somos  .txt-quem-somos p{
+    text-align: justify;
+    font-family: "Unbounded", serif;
+    margin: 25px 0;
+}
+
+.quem-somos .txt-quem-somos p2{
+    font-weight: 10;
+    font-size: 15px;
+    text-align: justify;
+    font-family: "Unbounded", serif;
+    margin: 25px 0;
+    color: #96a9ff;
+        text-align: center;
+}
+
+.quem-somos .img-quem-somos img {
+    height: 300px;
+}
+
+.btn-social button{
+    width: 35px;
+    height: 35px;
+    background-color: #2049ff;
+    border: none;
+    border-radius: 30%;
+    font-size: 20px;
+    color: #121212;
+    cursor: pointer;
+    margin: 15px 5px;
+}
+
+.quem-somos  .img-quem-somos img{
+    width: 350px;
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+.highlight {
+    color: #2049ff;
+    font-weight: 250;
+    font-family: "Unbounded", serif;
+}
+
+/* ESTILO DO SOBRE*/
+
+section.sobre , .equipe{
+    padding: 40px 4%;
+    margin-top: 50px;
+    
+}
+
+
+section.sobre .flex, .equipe .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre, .equipe, .txt-equipe{
+    color: #ffffff;
+    
+    font-size: 7px;
+    text-align: justify;
+}
+
+.txt-equipe{
+    text-align: center;
+}
+
+
+.equipe-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.membro {
+    margin-top: 40px;
+    text-align: center;
+    width: 150px;
+}
+
+.membro img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border-radius: 50px;
+    border: 2px solid #1a0d72;
+}
+
+.membro:hover img {
+    transform: scale(1.05);
+    transition: 0.3s;
+    box-shadow: 0px 0px 15px #281d7270;
+}
+
+.membro:hover h3 {
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+
+/* Remove sombra do h3 caso ele seja hover */
+.membro h3:hover {
+    box-shadow: none;
+}
+
+
+.membro h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    font-weight: 250;
+    color: #2049ff;
+    font-family: "Unbounded", serif;
+}
+
+.membro p {
+    font-size: 14px;
+    font-family: "Unbounded", serif;
+    color: gray;
+}
+
+
+.sobre .txt-sobre h2 ,.equipe, .txt-equipe h2{
+    font-size: 32px;
+    font-family: "Unbounded", serif;
+    text-align: center;
+}
+
+.equipe, .txt-equipe span{
+    font-size: 42px;
+    font-weight: 200;
+    color: #2049ff;
+    font-family: "Unbounded", serif;
+    margin-bottom: 11px;
+    display: block;
+}
+
+.sobre .txt-sobre span {
+    font-size: 42px;
+    font-weight: 200;
+    color: #2049ff;
+    font-family: "Unbounded", serif;
+    margin-bottom: 1px;
+    display: block;
+}
+
+.sobre .txt-sobre p, .equipe, .txt-equipe p {
+    text-align: justify;
+    margin: 5px 0;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+}
+
+.highlight {
+    color: #2049ff;
+    font-weight: 250;
+    font-family: "Unbounded", serif;
+}
+
+/* ESTILO DO FORMULARIO*/
+section.sobre, .equipe {
+    padding: 40px 4%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+section.sobre .flex, .equipe .flex {
+    align-items: center;
+    gap: 60px;
+    justify-content: center; /* Centraliza os elementos */
+    flex-direction: column;
+}
+
+.equipe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+section.formulario{
+    padding: 60px 4%;
+}
+
+section.formulario .interface h2 {
+    margin-top: -20px;
+    font-size: 30px;
+    font-family: "Unbounded", serif;
+    text-align: center;
+    color: #d5dcff;
+}
+
+section.formulario .interface span {
+    font-size: 40px;
+    font-weight: 200;
+    color: #2049ff;
+    font-family: "Unbounded", serif;
+    display: block;
+    margin-bottom: 30px;
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea{
+
+    width: 100%;
+    background-color: #3a3a3a;
+    border: 0;
+    outline: 0;
+    padding: 30px 15px;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+form textarea{
+    resize: none;
+    font-family: "Unbounded", serif;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #1b1b1b;
+}
+
+form input::placeholder{
+    font-family: "Unbounded", serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+form .btn-enviar{
+    margin-top: 15px;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+form .btn-enviar input{
+    width: 300px;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #121212;
+    background-color: #1a0d72;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Unbounded", serif;
+    transition: .4s;
+    text-align: center;
+}
+
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 15px #2049ff2a;
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+form input:not([type="submit"]):hover, 
+form textarea:hover {
+    border: 1px solid #2049ff; /* Adiciona uma borda azul ao passar o mouse */
+    transition: border-color 0.3s ease; /* Suaviza a transição */
+}
+
+/* ESTILO DO FOOTER */
+
+footer {
+    margin-top: -40px;
+    padding: 20px 4%;
+    box-shadow: 0px 0px 25px #2049ff3d;
+}
+
+footer .flex {
+    justify-content: space-between; /* Distribui os elementos com espaço entre eles */
+    align-items: center; /* Centraliza verticalmente os itens */
+    display: flex; /* Torna o flexbox ativo */
+}
+
+.borda {
+    border-top: 1px solid #2049ff;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+footer .line-footer p {
+    color: white;
+    font-size: 12px;
+}
+
+footer .logo-footer img {
+    width: 46px; /* Ajusta o tamanho da imagem */
+    height: auto;
+    display: block; /* Garante que a imagem respeite o alinhamento */
+}
+
+
+/* ESTILO PARA OS TEXTOS DA PÁGINA BRUTEFORCE TESTER */
+
+.quem-somos, .sobre {
+    padding: 40px 4%;
+    margin-top: 50px;
+}
+
+.quem-somos h2, .sobre h2 {
+    color: #ffffff;
+    font-weight: 350;
+    font-size: 40px;
+    font-family: "Unbounded", serif;
+}
+
+.quem-somos span, .sobre span {
+    color: #2049ff;
+    font-size: 42px;
+    font-weight: 200;
+    font-family: "Unbounded", serif;
+    display: block;
+    
+}
+
+.quem-somos p, .sobre p {
+    text-align: justify;
+    margin: 25px 0;
+    font-family: "Unbounded", serif;
+    font-size: 16px;
+    color: #f4f4f4;
+    text-align: center;
+}
+
+.quem-somos .txt-quem-somos p2, .sobre .txt-sobre p2 {
+    font-weight: 10;
+    font-size: 15px;
+    color: #96a9ff;
+    text-align: justify;
+    margin: 25px 0;
+    font-family: "Unbounded", serif;
+}
+
+
+
+/* RESPONSIVO */
+
+@media screen and (max-width: 1020px){
+    header .logo img{
+        width: 50px; /* Ajuste o tamanho */
+        height: auto;
+    }
+
+    .topo-do-site .flex{
+        flex-direction: row;
+    }
+
+    .menu-desktop, .btn-contato,.img-topo-site, .img-quem-somos{
+        display: none;
+            text-align: center;
+    }
+    
+    .flex{
+        flex-direction: column;
+    }
+
+    .topo-do-site h1 span{
+        font-size: 32px;
+    }
+
+    .topo-do-site h1{
+        font-size: 32px;
+    }
+
+    .topo-do-site p{
+        font-size: 20px;
+    }
+
+    section.topo-do-site{
+        padding: 1px 4%;
+    }
+    
+    section.projetos .flex{
+        padding: 5px 2%;
+        flex-direction: column;
+    }
+
+    section.projetos .flex{
+        gap: 0;
+    }
+
+    section.projetos .projetos-box{
+        font-size: 11px;
+        height: 100%;
+        max-height: max-content;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    section.projetos .projetos-box h3{
+        font-size: 20px;
+        
+    }
+
+    section.projetos .projetos-box i{
+        font-size: 25px;
+    }
+
+    section.projetos span{
+        color: #2049ff;
+        font-weight: 200;
+        font-family: "Unbounded", serif;
+        font-size: 25px;
+    }
+    
+    section.projetos h2{
+        color: #ffffff;
+        font-weight: 350;
+        font-size: 25px;
+        font-family: "Unbounded", serif;
+    }
+
+    .txt-quem-somos span{
+        color: #2049ff;
+        font-size: 35px;
+        font-weight: 200;
+        font-family: "Unbounded", serif;
+        display: block;
+        text-align: center;
+    }
+
+    .btn-login button{
+        padding: 10px 40px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #121212;
+        background-color: #1a0d72;
+        border: 0;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: "Unbounded", serif;
+        transition: .4s;
+    }
+
+    .btn-login button:hover{
+        box-shadow: 0px 0px 20px #281d7270;
+        transition: 0.3s;
+        transform: scale(1.05);
+    }
+
+    .txt-quem-somos{
+        text-align: center;
+    }
+
+    section.projetos .projetos-box{
+        align-self: center;
+    }
+}
+
+/* Correções para a responsividade no mobile */
+.input-group {
+    padding-top: 15px;
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    align-items: flex-end;
+    gap: 10px;
+    text-decoration: none;
+    max-width: 100%;
+}
+
+.input-group .inpt-senha {
+    flex: 1;
+    
+    text-align: left;
+    text-decoration: none;
+    padding: 8px 20px; /* Ajuste de padding */
+    border-radius: 20px;
+    font-size: 14px; /* Reduzido para dispositivos menores */
+    font-family: "Unbounded", serif;
+    max-width: 80%; /* Limita o tamanho */
+}
+
+.input-group .btn-tester {
+    padding: 9.5px 15px; /* Menor padding no mobile */
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #1a0d72;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+}
+
+.input-group .btn-tester:hover {
+    background-color: #2049ff;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    .input-group {
+        gap: 10px; /* Menor espaçamento no mobile */
+    }
+
+    .input-group .inpt-senha, .input-group .btn-tester {
+        font-size: 9px;
+        max-width: 100%; /* Mantém elementos na mesma linha com tamanho reduzido */
+        white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+    }
+
+    .input-group .inpt-senha {
+        flex: 1;
+        
+        text-align: left;
+        text-decoration: none;
+        padding: 8px 10px; /* Ajuste de padding */
+        border-radius: 20px;
+        font-size: 8px; /* Reduzido para dispositivos menores */
+        font-family: "Unbounded", serif;
+        max-width: 90%; /* Limita o tamanho */
+    }
+    
+    .input-group .btn-tester {
+        padding: 9px 5px; /* Menor padding no mobile */
+        font-size: 9px;
+        text-decoration: none;
+        border-radius: 20px;
+        background-color: #1a0d72;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 90px;
+    }
+    
+
+}
+
+.linha-divisoria {
+    border: none;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(32, 73, 255, 0) 5%, rgba(32, 73, 255, 0.7) 10%, rgba(32, 73, 255, 0.7) 90%, rgba(32, 73, 255, 0) 95%);
+    margin: 40px 0; /* Espaçamento superior e inferior */
+}
