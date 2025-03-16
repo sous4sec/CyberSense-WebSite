@@ -1,17 +1,16 @@
 {
     "builds": [
-      {
+    {
         "src": "index.html",
         "use": "@vercel/static"
-      },
-      {
+    },
+    {
         "src": "public/**",
         "use": "@vercel/static"
-      },
-      {
+    },
+    {
         "src": "src/**",
         "use": "@vercel/static"
-      }
+    }
     ]
-  }
-  
+}
