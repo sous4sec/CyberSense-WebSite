@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "public": "CyberSense",
   "builds": [
     {
       "src": "CyberSense/index.html",
