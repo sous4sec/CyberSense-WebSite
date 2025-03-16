@@ -1071,10 +1071,11 @@ footer .logo-footer img {
 
     .visao-cliente .flex {
         display: flex;
+        text-align: center;
         flex-direction: column; /* Organiza a imagem e o texto em coluna */
         align-items: center; /* Centraliza os itens dentro da flex */
-        gap: 20px; /* Ajusta o espaçamento entre a imagem e o texto */
-        width: 100%; /* Garante que a flex ocupe toda a largura disponível */
+        gap: 10px; /* Ajusta o espaçamento entre a imagem e o texto */
+        width: 150%; /* Garante que a flex ocupe toda a largura disponível */
     }
 
     .visao-cliente .img-visao-cliente {
@@ -1082,14 +1083,13 @@ footer .logo-footer img {
     }
 
     .txt-visao-cliente h2 {
-        font-size: 1rem; /* Diminui o tamanho do título */
         text-align: center; /* Garante que o título fique centralizado */
-        margin: 0; /* Remove qualquer margem ao redor do título */
+
     }
 
     .txt-visao-cliente p1 {
         padding-top: 20px;
-        font-size: 1rem; /* Diminui o tamanho do texto */
+        font-size: 0.7rem; /* Diminui o tamanho do texto */
         line-height: 1.5; /* Ajusta o espaçamento entre as linhas */
         margin: 0; /* Remove a margem */
         text-align: center; /* Garante que o texto fique centralizado */
@@ -1098,6 +1098,6 @@ footer .logo-footer img {
     }
 
     .txt-visao-cliente .highlight {
-        font-weight: bold; /* Destaca as palavras em negrito */
+        font-size: 15px;
     }
 }
