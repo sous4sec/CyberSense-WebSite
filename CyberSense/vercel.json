@@ -2,8 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "CyberSense/**",
+      "src": "index.html",
       "use": "@vercel/static"
     }
-  ]
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "root": "CyberSense"
 }
