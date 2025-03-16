@@ -1,16 +1,35 @@
 {
     "builds": [
-    {
+      {
         "src": "index.html",
         "use": "@vercel/static"
-    },
-    {
+      },
+      {
         "src": "public/**",
         "use": "@vercel/static"
-    },
-    {
+      },
+      {
         "src": "src/**",
         "use": "@vercel/static"
-    }
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/Pagina-Inicial",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/Company",
+        "destination": "/src/pages/p-emp/index.html"
+      },
+      {
+        "source": "/BruteForce-Tester",
+        "destination": "/src/pages/p-btf-tester/index.html"
+      },
+      {
+        "source": "/CyberSense-Services",
+        "destination": "/src/pages/p-company/index.html"
+      }
     ]
-}
+  }
+  
