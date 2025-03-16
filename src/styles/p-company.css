@@ -1038,9 +1038,66 @@ footer .logo-footer img {
 
 }
 
+
 .linha-divisoria {
     border: none;
     height: 2px;
     background-image: linear-gradient(to right, rgba(32, 73, 255, 0) 5%, rgba(32, 73, 255, 0.7) 10%, rgba(32, 73, 255, 0.7) 90%, rgba(32, 73, 255, 0) 95%);
     margin: 40px 0; /* Espaçamento superior e inferior */
+}
+
+
+@media (max-width: 768px) {
+    .beneficios-empresa .flex-empresa {
+        flex-direction: row; /* Organiza os itens em linha */
+        justify-content: center; /* Centraliza os itens */
+        gap: 15px; /* Ajuste do espaçamento */
+    }
+
+    .beneficio-item-empresa {
+        width: 100%; /* Faz com que as caixas ocupem toda a largura disponível */
+        max-width: 300px; /* Limita o tamanho máximo das caixas */
+        margin: 10px 0; /* Adiciona margens verticais */
+    }
+}
+
+@media (max-width: 768px) {
+    .visao-cliente .interface {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens no eixo horizontal */
+        text-align: center; /* Garante que o texto dentro da interface fique centralizado */
+    }
+
+    .visao-cliente .flex {
+        display: flex;
+        flex-direction: column; /* Organiza a imagem e o texto em coluna */
+        align-items: center; /* Centraliza os itens dentro da flex */
+        gap: 20px; /* Ajusta o espaçamento entre a imagem e o texto */
+        width: 100%; /* Garante que a flex ocupe toda a largura disponível */
+    }
+
+    .visao-cliente .img-visao-cliente {
+        display: none !important; /* A imagem desaparece em telas pequenas */
+    }
+
+    .txt-visao-cliente h2 {
+        font-size: 1rem; /* Diminui o tamanho do título */
+        text-align: center; /* Garante que o título fique centralizado */
+        margin: 0; /* Remove qualquer margem ao redor do título */
+    }
+
+    .txt-visao-cliente p1 {
+        padding-top: 20px;
+        font-size: 1rem; /* Diminui o tamanho do texto */
+        line-height: 1.5; /* Ajusta o espaçamento entre as linhas */
+        margin: 0; /* Remove a margem */
+        text-align: center; /* Garante que o texto fique centralizado */
+        display: block; /* Garante que o p1 seja tratado como um bloco e ocupe toda a largura */
+        width: 100%; /* Garante que o texto ocupe toda a largura disponível */
+    }
+
+    .txt-visao-cliente .highlight {
+        font-weight: bold; /* Destaca as palavras em negrito */
+    }
 }
