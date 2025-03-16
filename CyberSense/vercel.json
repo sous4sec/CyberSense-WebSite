@@ -1,12 +1,16 @@
 {
-    "builds": [
+  "version": 2,
+  "public": true,
+  "builds": [
       {
-        "src": "src/pages/**/*",
-        "use": "@vercel/static-build"
+          "src": "CyberSense/index.html",
+          "use": "@vercel/static"
       }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/src/pages/$1" }
-    ]
-  }
-  
+  ],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "/CyberSense/index.html"
+      }
+  ]
+}
