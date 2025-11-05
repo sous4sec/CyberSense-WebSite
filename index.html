@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!--Fim Bootstrap Icons-->
     <link rel="icon" href="/public/images/icon/icon1.png" type="image/png">
-    <title>Cybersense</title>
+    <title>CyberSense</title>
     <style>
         /* ESTILO GERAL */
         :root {
@@ -309,8 +309,6 @@
             animation: flutuar 3s ease-in-out infinite alternate;
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
         }
-
-
 
         @keyframes flutuar {
             0% {
@@ -735,11 +733,6 @@
             font-family: "Unbounded", serif;
         }
 
-        .membro p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
-        }
-
         /* ESTILO DA SEÇÃO QUEM SOMOS */
         .quem-somos .flex {
             align-items: center;
@@ -886,6 +879,216 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
+        /* CHATBOT */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .chatbot-button:hover {
+            background: var(--primary-light);
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .chatbot-button::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-light);
+            opacity: 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+        }
+
+        .chatbot-modal {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 350px;
+            height: 500px;
+            background: var(--bg-card);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: none;
+            flex-direction: column;
+            z-index: 1001;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            padding: 15px 20px;
+            background: rgba(32, 73, 255, 0.1);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chatbot-title h3 {
+            font-size: 1.1rem;
+            margin: 0;
+            font-family: "Unbounded", serif;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .chatbot-close:hover {
+            color: var(--primary-light);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.4;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background: rgba(32, 73, 255, 0.2);
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom-right-radius: 5px;
+        }
+
+        .chatbot-input {
+            padding: 15px 20px;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-input input:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 2px rgba(32, 73, 255, 0.2);
+        }
+
+        .chatbot-input button {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-input button:hover {
+            background: var(--primary-light);
+            transform: scale(1.05);
+        }
+
+        .quick-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .quick-option {
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-option:hover {
+            background: rgba(32, 73, 255, 0.3);
+        }
+
         /* RESPONSIVIDADE */
         @media screen and (max-width: 1024px) {
             .topo-do-site h1 {
@@ -998,6 +1201,13 @@
                 width: 120px;
                 height: 120px;
             }
+
+            .chatbot-modal {
+                width: 300px;
+                height: 450px;
+                left: 20px;
+                bottom: 90px;
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -1031,6 +1241,17 @@
                 width: 140px;
                 height: 140px;
             }
+
+            .chatbot-container {
+                left: 20px;
+                bottom: 20px;
+            }
+
+            .chatbot-modal {
+                width: calc(100vw - 40px);
+                left: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
@@ -1042,7 +1263,7 @@
         <div class="interface">
             <div class="logo">
                 <a href="index.html">
-                    <img src="public/images/icon/icon1.png" alt="Logo DataGuardian">
+                    <img src="public/images/icon/icon1.png" alt="Logo CyberSense">
                 </a>
             </div>
             <nav class="menu-desktop">
@@ -1089,10 +1310,10 @@
                 </div>
                 <div class="flex">
                     <div class="img-aplicativo">
-                        <img src="public\images\icon\Screenshot 2025-11-04 at 20-39-10 APP - CYBERSENSE (BAKUCP 19_11) - Thunkable.png" alt="Mockup do aplicativo DataGuardian">
+                        <img src="public\images\icon\Screenshot 2025-11-04 at 20-39-10 APP - CYBERSENSE (BAKUCP 19_11) - Thunkable.png" alt="Mockup do aplicativo CyberSense">
                     </div>
                     <div class="txt-aplicativo">
-                        <h3>Cybersense - Educação Digital</h3>
+                        <h3>CyberSense - Educação Digital</h3>
                         <p>Desenvolvemos um aplicativo inovador para educar usuários sobre a importância da proteção de dados sensíveis. Através de uma interface intuitiva, ajudamos pessoas a entenderem os riscos de compartilhar informações pessoais online.</p>
                         
                         <div class="feature-list">
@@ -1244,24 +1465,19 @@
                     <div class="membro">
                         <img src="public/images/pfp/mb.jpg" alt="Mariane Abidias" class="membro-img">
                         <h3>Mariane Abidias</h3>
-                        <p>Analista de Dados</p>
                     </div>
                     <div class="membro">
                         <img src="public/images/pfp/ml.jpeg" alt="Marcus Lopes" class="membro-img">
                         <h3>Marcus Lopes</h3>
-                        <p>Desenvolvedor Full Stack</p>
                     </div>
                     <div class="membro">
                         <img src="public/images/pfp/ms.jpeg" alt="Matheus Sousa" class="membro-img">
                         <h3>Matheus Sousa</h3>
-                        <p>Especialista em Cibersegurança</p>
                     </div>
                     <div class="membro">
                         <img src="public/images/pfp/mn.jpg" alt="Manuela Alves" class="membro-img">
                         <h3>Manuela Alves</h3>
-                        <p>Especialista em Neuropsicologia</p>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -1278,7 +1494,7 @@
                     <div class="txt-quem-somos">
                         <h2>Nossa <span>Missão</span></h2>
                         <p>
-                            A <strong>DataGuardian</strong> é um projeto que surgiu da necessidade urgente de educar as pessoas sobre a importância da proteção de dados sensíveis na era digital.
+                            A <strong>CyberSense</strong> é um projeto que surgiu da necessidade urgente de educar as pessoas sobre a importância da proteção de dados sensíveis na era digital.
                         </p>
                         <p>
                             Nossa equipe é composta por profissionais apaixonados por segurança da informação e educação digital, unidos pelo objetivo comum de criar um ambiente online mais seguro para todos.
@@ -1286,7 +1502,7 @@
                         <p>
                             Acreditamos que a conscientização é a primeira linha de defesa contra violações de privacidade. Por isso, desenvolvemos soluções que capacitam usuários a tomarem decisões informadas sobre o que compartilham online.
                         </p>
-                        <span class="team-note">Projeto desenvolvido pela equipe DataGuardian</span>
+                        <span class="team-note">Projeto desenvolvido pela equipe CyberSense</span>
                         
                         <div class="btn-social">
                             <a href="#" target="_blank"><button><i class="bi bi-code-square"></i></button></a>
@@ -1305,7 +1521,7 @@
             <div class="line-footer">
                 <div class="flex">
                     <div class="logo-footer">
-                        <img src="public/images/icon/icon1.png" alt="Cybersense">
+                        <img src="public/images/icon/icon1.png" alt="CyberSense">
                     </div>
                     <div class="btn-social">
                         <a href="#" target="_blank"><button><i class="bi bi-code-square"></i></button></a>
@@ -1315,10 +1531,44 @@
                 </div>
             </div>
             <div class="line-footer borda">
-                <p><i class="bi bi-c-circle"></i> 2023 DataGuardian. Todos os direitos reservados.</p>
+                <p><i class="bi bi-c-circle"></i> 2025 CyberSense. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
+    
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-button" id="chatbotToggle">
+            <i class="bi bi-robot"></i>
+        </button>
+        <div class="chatbot-modal" id="chatbotModal">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="bi bi-robot"></i>
+                    <h3>CyberSense Assistant</h3>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Olá! Sou o assistente da CyberSense. Como posso ajudar você hoje?
+                    <div class="quick-options">
+                        <div class="quick-option" data-message="O que são dados sensíveis?">Dados sensíveis</div>
+                        <div class="quick-option" data-message="Como proteger meus dados?">Proteção de dados</div>
+                        <div class="quick-option" data-message="Quais são os riscos?">Riscos online</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Digite sua mensagem...">
+                <button id="chatbotSend">
+                    <i class="bi bi-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
     
     <button id="scrollTopButton"><i class="bi bi-arrow-up"></i></button>
     
@@ -1421,6 +1671,122 @@
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
             });
+
+            // Chatbot functionality
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatbotModal = document.getElementById('chatbotModal');
+            const chatbotClose = document.getElementById('chatbotClose');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotSend = document.getElementById('chatbotSend');
+            const quickOptions = document.querySelectorAll('.quick-option');
+
+            // Abrir/fechar chatbot
+            chatbotToggle.addEventListener('click', () => {
+                chatbotModal.style.display = 'flex';
+            });
+
+            chatbotClose.addEventListener('click', () => {
+                chatbotModal.style.display = 'none';
+            });
+
+            // Fechar chatbot ao clicar fora
+            document.addEventListener('click', (e) => {
+                if (!chatbotModal.contains(e.target) && e.target !== chatbotToggle) {
+                    chatbotModal.style.display = 'none';
+                }
+            });
+
+            // Enviar mensagem
+            function sendMessage() {
+                const message = chatbotInput.value.trim();
+                if (message) {
+                    addMessage(message, 'user');
+                    chatbotInput.value = '';
+                    
+                    // Simular resposta do bot após um breve delay
+                    setTimeout(() => {
+                        botResponse(message);
+                    }, 1000);
+                }
+            }
+
+            chatbotSend.addEventListener('click', sendMessage);
+
+            chatbotInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Opções rápidas
+            quickOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const message = option.getAttribute('data-message');
+                    addMessage(message, 'user');
+                    
+                    setTimeout(() => {
+                        botResponse(message);
+                    }, 1000);
+                });
+            });
+
+            // Adicionar mensagem ao chat
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+                messageDiv.textContent = text;
+                
+                chatbotMessages.appendChild(messageDiv);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+
+            // Resposta do bot
+            function botResponse(userMessage) {
+                let response = '';
+                
+                // Respostas baseadas na mensagem do usuário
+                if (userMessage.toLowerCase().includes('dados sensíveis') || userMessage.toLowerCase().includes('o que são dados sensíveis')) {
+                    response = 'Dados sensíveis são informações pessoais que, se vazadas ou mal utilizadas, podem causar danos significativos. Incluem dados financeiros, de saúde, orientação sexual, convicções religiosas ou políticas, entre outros.';
+                } else if (userMessage.toLowerCase().includes('proteger') || userMessage.toLowerCase().includes('proteção')) {
+                    response = 'Para proteger seus dados: 1) Use senhas fortes e únicas, 2) Ative autenticação de dois fatores, 3) Cuidado com o que compartilha online, 4) Mantenha softwares atualizados, 5) Use conexões seguras (HTTPS).';
+                } else if (userMessage.toLowerCase().includes('risco') || userMessage.toLowerCase().includes('perigo')) {
+                    response = 'Os riscos incluem: roubo de identidade, extorsão financeira, discriminação, perda de privacidade, danos à reputação e acesso não autorizado a contas pessoais.';
+                } else if (userMessage.toLowerCase().includes('aplicativo') || userMessage.toLowerCase().includes('app')) {
+                    response = 'Nosso aplicativo CyberSense oferece educação sobre proteção de dados através de guias interativos, simulações de riscos e testes de conhecimento. Você pode visualizar o preview no nosso site!';
+                } else if (userMessage.toLowerCase().includes('equipe') || userMessage.toLowerCase().includes('quem são')) {
+                    response = 'Nossa equipe é composta por especialistas em segurança da informação, desenvolvimento e design. Você pode conhecer cada membro na seção "Equipe" do nosso site.';
+                } else {
+                    response = 'Desculpe, não entendi sua pergunta. Posso ajudar com informações sobre dados sensíveis, proteção de dados, riscos online ou nosso aplicativo. O que você gostaria de saber?';
+                }
+                
+                addMessage(response, 'bot');
+                
+                // Adicionar opções rápidas após a resposta
+                const quickOptionsDiv = document.createElement('div');
+                quickOptionsDiv.classList.add('quick-options');
+                quickOptionsDiv.innerHTML = `
+                    <div class="quick-option" data-message="O que são dados sensíveis?">Dados sensíveis</div>
+                    <div class="quick-option" data-message="Como proteger meus dados?">Proteção de dados</div>
+                    <div class="quick-option" data-message="Quais são os riscos?">Riscos online</div>
+                `;
+                
+                const lastMessage = chatbotMessages.lastChild;
+                lastMessage.appendChild(quickOptionsDiv);
+                
+                // Reaplicar event listeners às novas opções rápidas
+                lastMessage.querySelectorAll('.quick-option').forEach(option => {
+                    option.addEventListener('click', () => {
+                        const message = option.getAttribute('data-message');
+                        addMessage(message, 'user');
+                        
+                        setTimeout(() => {
+                            botResponse(message);
+                        }, 1000);
+                    });
+                });
+            }
         });
     </script>
 </body>
